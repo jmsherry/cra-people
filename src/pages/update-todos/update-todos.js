@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import PageFrame from "../../components/page-frame/page-frame";
 import Header from "../../components/header/header";
 import TodoForm from "../../components/forms/todo-form/todo-form";
@@ -7,9 +7,7 @@ import { TodosContext } from "../../contexts/todos.context";
 
 function UpdateTodos() {
   let { id } = useParams();
-  const { todos } = useContext(
-    TodosContext
-  );
+  const { todos } = useContext(TodosContext);
   console.log("todos", todos);
   // useEffect(() => {
   //   console.log("in useEffect", todos, loaded);

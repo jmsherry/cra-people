@@ -14,7 +14,7 @@ export const TodosContext = createContext({
 
 export const TodosProvider = (props) => {
   const [todos, setTodos] = useState([]);
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
   const { addToast } = useToasts();
 
   const addTodo = (formData) => {
