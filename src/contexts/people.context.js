@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 import { useToasts } from "react-toast-notifications";
 // import cloneDeep from 'lodash.cloneDeep' <-- use if your objects get complex
 
-const API_HOST = "https://peoplebackend.herokuapp.com/";
+const API_HOST = "https://peoplebackend.herokuapp.com";
 const API_ENDPOINT = `${API_HOST}/api/v1/people`;
 
 export const PeopleContext = createContext({
