@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  appBar: {
+    backgroundColor: theme.secondary.dark,
+  },
   menuButton: {
     marginRight: "-50px", // Because it off-centers the title (logically -64px)
   },
@@ -72,7 +75,7 @@ export default function Header() {
   return (
     <div className={classes.root}>
       <NavDrawer />
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <IconButton
             edge="start"
