@@ -30,7 +30,7 @@ function People() {
           {!loading && error ? (<ErrorDisplay error={error} />): null}
           {!loading && !error && people && people.length ? (
             <PeopleList people={people} />
-          ) : null};
+          ) : null}
           {!loading && !error && people && !people.length ? (
             <NoResults dataName="people" />
           ): null}
