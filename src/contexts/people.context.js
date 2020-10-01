@@ -2,6 +2,9 @@ import React, { createContext, useState } from "react";
 import { useToasts } from "react-toast-notifications";
 // import cloneDeep from 'lodash.cloneDeep' <-- use if your objects get complex
 
+const API_HOST = "https://peoplebackend.herokuapp.com/";
+const API_ENDPOINT = `${API_HOST}/api/v1/people`;
+
 export const PeopleContext = createContext({
   fetchPeople: () => [],
   addPerson: () => {},
@@ -30,7 +33,7 @@ export const PeopleProvider = (props) => {
       setLoading(true);
     }
     try {
-      const response = await fetch("/api/v1/people");
+      const response = await fetch(API_ENDPOINT);
       if (response.status !== 200) {
         throw response;
       }
@@ -48,7 +51,7 @@ export const PeopleProvider = (props) => {
 
   const addPerson = async (formData) => {
     try {
-      const response = await fetch("/api/v1/people", {
+      const response = await fetch(API_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -76,7 +79,7 @@ export const PeopleProvider = (props) => {
   const updatePerson = async (id, updates) => {
     let newPerson = null;
     try {
-      const response = await fetch(`/api/v1/people/${id}`, {
+      const response = await fetch(`${API_ENDPOINT}/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -123,7 +126,7 @@ export const PeopleProvider = (props) => {
   const deletePerson = async (id) => {
     let deletedPerson = null;
     try {
-      const response = await fetch(`/api/v1/people/${id}`, {
+      const response = await fetch(`${API_ENDPOINT}/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

@@ -16,7 +16,7 @@ function Home() {
             (todos) against them.
           </p>
           <p>
-            There are 6 other pages (not counting the 404 page). These will
+            There are 3 other pages (not counting the 404 page). These will
             allow you to:
           </p>
           <ul
@@ -47,7 +47,7 @@ function Home() {
             >
               Update people
             </li>
-            <li>
+            {/* <li>
               List tasks{" "}
               <span
                 style={{
@@ -59,7 +59,7 @@ function Home() {
               </span>
             </li>
             <li>Add tasks</li>
-            <li>Update tasks</li>
+            <li>Update tasks</li> */}
           </ul>
         </PageFrame>
       </main>

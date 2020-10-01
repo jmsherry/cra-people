@@ -39,8 +39,6 @@ const NavDrawer = () => {
             { text: "Home", to: "/" },
             { text: "People", to: "/people" },
             { text: "Add People", to: "/people/add" },
-            { text: "Todos", to: "/todos" },
-            { text: "Add Todos", to: "/todos/add" },
           ].map(({ text, to }) => (
             <ListItem button component={NavLink} to={to} key={text}>
               <ListItemText>{text}</ListItemText>

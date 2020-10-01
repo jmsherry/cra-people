@@ -6,9 +6,8 @@ export const AuthContext = createContext({
   logout: () => {},
 });
 
-
 export const AuthProvider = (props) => {
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState(null);
   const login = (user) => setUser(user);
   const logout = () => setUser(null);
   return (
@@ -20,5 +19,6 @@ export const AuthProvider = (props) => {
       }}
     >
       {props.children}
-    </AuthContext.Provider>);
-}
+    </AuthContext.Provider>
+  );
+};
