@@ -1,9 +1,6 @@
 import React, { useContext, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Button,
-  TextField,
-} from "@material-ui/core";
+import { Button, TextField } from "@material-ui/core";
 import { yupResolver } from "@hookform/resolvers";
 import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
@@ -19,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     minWidth: 120,
     display: "flex",
-    justifyContent: 'center',
+    justifyContent: "center",
   },
 }));
 
@@ -28,6 +25,12 @@ const schema = yup.object().shape({
   lastName: yup.string().required().min(2).max(20),
   email: yup.string().email().required(),
 });
+
+const emptyValues = {
+  firstName: "",
+  lastName: "",
+  email: "",
+};
 
 function PersonForm({ initialValues }) {
   const classes = useStyles();
@@ -64,6 +67,7 @@ function PersonForm({ initialValues }) {
     } else {
       addPerson(formValues);
     }
+    reset(emptyValues);
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
