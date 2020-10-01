@@ -21,6 +21,7 @@
     "react-scripts": "3.4.1",
     "react-toast-notifications": "^2.4.0",
     "react-transition-group": "^4.4.1",
+    "uuid": "^8.3.0",
     "yup": "^0.29.1"
   },
   "scripts": {

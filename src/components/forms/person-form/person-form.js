@@ -118,17 +118,7 @@ function PersonForm({ initialValues }) {
         />
       </div>
       <div className={classes.formRow}>
-        <Button
-          onClick={() =>
-            reset({
-              firstName: "",
-              lastName: "",
-              email: "",
-            })
-          }
-        >
-          Reset
-        </Button>
+        <Button onClick={() => reset(emptyValues)}>Reset</Button>
         <Button
           type="submit"
           variant="contained"
